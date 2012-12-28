@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+# This file should be located at .git/hooks/commit-msg
+
+# cd project_dir
+# cp hooks/commit-msg .git/hooks/commit-msg
+# chmod u+x .git/hooks/commit-msg
+
+
+message_file = ARGV[0]
+message = File.read(message_file)
+
+$regex = /\[ref: (\d+)\]/
+
+if !$regex.match(message)
+  puts "[POLICY] Your message is not formatted correctly"
+  exit 1
+end
