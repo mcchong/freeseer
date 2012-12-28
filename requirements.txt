@@ -1,0 +1,3 @@
+#Freeseer Requirements
+yapsy==1.9.2
+passlib

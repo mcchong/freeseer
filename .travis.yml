@@ -1,0 +1,13 @@
+# versions of python we support
+language: python
+python:
+  - "2.7"
+  - "3.2"
+# command to install dependencies
+install: 
+    - pip install -r requirements.txt --use-mirrors
+    - sudo apt-get -qq install build-essential qt4-qmake pyqt4-dev-tools libqt4-dev libqt4-sql libqt4-sql-sqlite python-qt4 python-qt4-dev python-qt4-sql python2.7-dev python-feedparser python-setuptools python-xlib
+# command to run tests - scripts must be made executeable
+script:
+    - chmod -R 777 ./bin/ci/run_tests.sh
+    - ./bin/ci/run_tests.sh
