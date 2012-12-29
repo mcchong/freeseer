@@ -7,6 +7,7 @@ python:
 install: 
     - pip install -r requirements.txt --use-mirrors
     - sudo apt-get install build-essential qt4-qmake pyqt4-dev-tools libqt4-dev libqt4-sql libqt4-sql-sqlite python-qt4 python-qt4-dev python-qt4-sql python2.7-dev python-feedparser python-setuptools python-xlib
+    - python -c "import PyQt4"
     - python -c "from PyQt4 import QtGui, QtCore"
 # command to run tests - scripts must be made executeable
 script:
